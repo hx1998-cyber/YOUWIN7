@@ -1,0 +1,14 @@
+// Node.js 项目配置文件，列出项目依赖
+{
+  "name": "youwin7",
+  "version": "1.0.0",
+  "description": "Multi-token betting game",
+  "scripts": {
+    "test": "hardhat test",
+    "deploy": "hardhat run scripts/deploy.js"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0",
+    "hardhat": "^2.19.0"
+  }
+}

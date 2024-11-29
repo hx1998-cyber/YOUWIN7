@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract BettingGame is ReentrancyGuard, Ownable {
-    // 支持的代币列表
+    // 支持的代币列表，支持不同链的ERC-20代币地址
     mapping(address => bool) public supportedTokens;
     
     // 每个代币的下注金额
@@ -64,7 +64,7 @@ contract BettingGame is ReentrancyGuard, Ownable {
         emit TokenRemoved(_token);
     }
     
-    // 下注功能
+    // 下注功能，用户可以使用支持的代币下注
     function placeBet(address _token) external nonReentrant {
         require(!paused, "Game is paused");
         require(supportedTokens[_token], "Token not supported");
